@@ -15,7 +15,7 @@ text_string = ["primo", "secondo", "terzo"]
 
 def make_frame(t):
     surface = gizeh.Surface(W,H)
-    current_text = text_string[int((t*len(text_string))//5)]
+    current_text = text_string[int((t*len(text_string))//duration)]
     text = gizeh.text(current_text, fontsize = 80, fontfamily="Impact", fill=(1,1,1), xy=(W/2, min(340,-340+max_distance*((t*len(text_string)/duration)%1))))
     text.draw(surface)
     return surface.get_npimage()
